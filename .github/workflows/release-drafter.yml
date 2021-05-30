@@ -1,9 +1,10 @@
 name: Release Drafter
 
 on:
-  # pull_request event is required only for autolabeler
-  pull_request:
-    types: [closed]
+  push:
+    # branches to consider in the event; optional, defaults to all
+    branches:
+      - master
 
 jobs:
   update_release_draft:
