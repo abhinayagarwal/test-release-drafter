@@ -3,11 +3,10 @@ name: Release Drafter
 on:
   # pull_request event is required only for autolabeler
   pull_request:
-    types: [closed]
+    types: [opened,closed]
 
 jobs:
   update_release_draft:
-    if: github.event.pull_request.merged == 'true'
     runs-on: ubuntu-latest
     steps:
       # Drafts your next Release notes as Pull Requests are merged into "master"
